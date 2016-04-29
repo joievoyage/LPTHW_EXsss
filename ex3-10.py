@@ -1,40 +1,47 @@
 # ex 3 and 4
 
 cats = 2        # A single equal sign ( = ),
-tuna = 3          #is used to set a variable to a
+tuna = 3        # is used to set a variable to a
 salmon = 4      # new value.
-lobster = 1.0     # It's integer (int)
+lobster = 1.0   # cats, tuna and salmon are integers (int), lobster is float (real) number
 prawn = 10
-cats_ate_fish = tuna + salmon
-seafood_platter = salmon + lobster + tuna + prawn # we can set more than one variable inside a value.
+cats_ate_fish = tuna + salmon  # variable name can not contain spaces, use underscore instead
+seafood_platter = salmon + lobster + tuna + prawn # we can create values from math expression based on existing variables
+                                                  # and assign it to a new variable (same as 4 + 1.0 + 3 + 10)
+                                                  # seafood_platter will be float because lobster is float
 
 
-print "I am telling a story."
+print "I am telling a story."  # we can display text on the screen
+                               # text (string) values are enclosed in single (') or double (") quotes
 
-print "We have" ,cats, "cats."  # If we set the value, that's no need to quote it again.
+print "We have", cats, "cats."  # we can print multiple values
+                                # cats is replaced with it's current value (4).
+                                # It has nothing to do with text value "cats"
 print "They are food lover."
 print "They love to eat lots of seafood, not only fish."
-print " They ate",cats_ate_fish,"fishes. And they were big fresh fish."
-print " But they are",cats, "cats, so they ate", cats_ate_fish * 2,"fishes."
+print " They ate", cats_ate_fish, "fishes. And they were big fresh fish."
+print " But they are", cats, "cats, so they ate", cats_ate_fish * 2, "fishes."  # it's ok to do simple math inside print stmt
 print " But we are not cats, we can eat a big platter."
 
-print " - " * 35
+print " - " * 35   # doing math with strings does funny (but useful) things
 
 # this is ex 5
 
-baby = 'Janelle' # this is string
+baby = 'Janelle'       # this is string
 gender = 'female'
-her_age = '1' # that's a string, because I '1'
-her_height = '72 cm' # number and letters group together also string
+her_age = '1'          # that's a also string and not an int, her_age * 5 will produce '11111'
+her_height = '72 cm'   # number and letters inside a string are just text characters
 her_weight = '9 kg'
-her_teeth = 8 # that's not a string, because didn't ' ', that's a <int>
-
+her_teeth = 8          # that's not a string, because didn't ' ', that's a <int>
+                       # it would be better to rename this variable as nb_of_teeth
+ 
 print "Hi everyone, let me introduce my daughter %s." % baby  # %s means String format, we add a % after the print,
-print "And she is a %s." % gender                          # because we need to call out the value.
+print "And she is a %s." % gender                             # because we need to call out the value.
 print "She is %s year old." % her_age                    # Otherwise, it will shows "TypeError: 'Str' object is not callable.
 print "She has %d teeth." % her_teeth # because 8 isn't a string, that's need to use %d (Decimal integers)
 print "She is %s tall and her weight is %s." % (her_height, her_weight) #the print not only 1 value, thats, need a ( )
 print "She loves to smile and be friend with everyone."
+
 
 print " * " * 35
 
@@ -42,7 +49,8 @@ print " * " * 35
 
 a = "There is %d baby, " % 1
 b = "and she is a %s." % gender
-is_not = "isn't" #We can not make a space bar, which isn't inside quote, need to put a _ between words.
+is_not = "isn't" # We can not make a space bar, which isn't inside quote, need to put a _ between words.
+                 # ??? you seem to be confusion variable names and associated values
 
 print a + b
 print "She %s a boy." % is_not
