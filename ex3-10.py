@@ -81,16 +81,20 @@ print J1 + J2 + J3 + J4 + J5 + J6 + J7
 print "~" * 25
 
 # ex8          # Question what's the different between %s and %r, I tried to use either %r or %s in same line, output are same.
+               # %r and %s are both used to create a string representation of some value (or object)
+               # the result is often the same or very similar
+               # for example for a string value `"%s" % "hi"` will produce `hi`, while `"%r" % "hi"` will produce `'hi'` (note the quote marks) 
 
 music = " %s %s %s %s"
 print music % ("do", "re", "mi", "fa")
 print music % (1, 2, 3, 4)
 print music % (False, True, False, False)
-print music % (                                   # same using like """ """ triple quote,
-    "Mary have a little lamb",                    # but after % need to put ( )
-    "Little lamb", "Little lamb",
+print music % (                                   # same using like """ """ triple quote   !!! No, triple quotes are used to create multi-line string value
+    "Mary have a little lamb",                    # but after % need to put ( )            here we simly formatting a string (music) using 4 other string values
+    "Little lamb",
+    "Little lamb",                     # for better readability put all values on separate lines
     "Mary loves her little lamb."
- )
+)
 
 print " + " * 28
 
@@ -99,8 +103,12 @@ print " + " * 28
 melody = "Do Re Mi Fa So La Ti Do"
 lyrics = "Blah\nLa\nLa\nLala\nFalala\nLulalu\nLalalala\nBlah"      # \n means a new line,
                                                                # If you want to set something that's too long, use \n to
-print "Lets hear some music: ", melody                       #to make a different line.
+print "Lets hear some music: ", melody                         # to make a different line.
 print "Here we go!", lyrics
+
+# \n is special because it's an "invisible" character (same applied for tab \t)
+# it is represented as two characters (\) and (n), but inside computer memory it is treated like any other single character
+# when we read text data from a file, we often need to be aware of \n.
 
 print """
 Let's sing this.
@@ -110,15 +118,15 @@ After that we can print it out nicely.
 Blah lalalalala, Let's do this.
 Ok, I know my song is bad.
 But this demo is enough already.
-"""                           #If triple quote something behind a print, if it's too long.
+"""                           # If triple quote allow creating of multi-line strings without relying on \n
 
 print " . " * 25
 
 # ex10
-triple_sec = "\ttriple_sec\\"           # \t is a tab, same like use a 4 spaces,
-rum_and_coke = "rum \\ and \\ coke\t"    # \\ is If I want to put a \ on a line, I have to put it for double.
-tequila = "\\tequila\\"
-vodka = "\\VOdk@\t"
+triple_sec = "\ttriple_sec\\"           # \t is a tab, same like use a 4 spaces, (or 2 or 8 spaces)
+rum_and_coke = "rum \\ and \\ coke\t"   # \\ is If I want to put a \ on a line, I have to put it for double.
+tequila = "\\tequila\\"                 # \ is called escape character because it changes the meaning of the character that follows it
+vodka = "\\VOdk@\t"                     # n is just a letter n, \n mean new line character 
 gin = "\\GiN\t"
 
 Long_Island_Iced_Tea = """
@@ -136,8 +144,8 @@ print "This is l0ng |s|@nd |ced Te@"
 print triple_sec + rum_and_coke + tequila + vodka + gin
 
 # ex 10 sample
-print "I am 6'2\" tall."
-print 'I am 6\'2" tall.'
+print "I am 6'2\" tall."   # we can use a single quote without the escape character inside a double quoted string
+print 'I am 6\'2" tall.'   # but the double quote character inside the same string must be escaped.
 
 # ex 11
 print "Who are you?"  #try to not use input, if need to use input, put it lke name = Joie,
