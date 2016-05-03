@@ -22,3 +22,11 @@ And you have a %r computer, Nice.
 
 # If we make a prompt variable to set something what we want
 # Then we should use raw_input(prompt) to do it.
+
+# What happens when you run this script as
+# python ex14.py
+
+# and
+# python ex14.py John Smith
+
+# how can you pass the full name as the argument to the script?
