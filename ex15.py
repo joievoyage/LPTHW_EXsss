@@ -28,5 +28,3 @@ print txt_again.read()
 
 # try: python ex15.py ex14.py
 # when you see "Type the filename again:" type README.md
-
-# i just added a new line
